@@ -1,8 +1,10 @@
-const config = require('../config.json'); 
+const { AppDataSource } = require('../config/ormconfig');
 const mysql = require('mysql2/promise'); 
 const { Sequelize } = require('sequelize');
 
-const db = {};
+const db = AppDataSource;
+module.exports = db;
+
 
 async function initialize() {
     try {

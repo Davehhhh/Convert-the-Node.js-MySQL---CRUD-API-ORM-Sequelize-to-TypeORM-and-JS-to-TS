@@ -1,5 +1,8 @@
 const bcrypt = require('bcryptjs');
-const db = require('../_helpers/db');
+const { AppDataSource } = require('../config/ormconfig');
+const { User } = require('../entities/User');
+
+const userRepository = AppDataSource.getRepository(User);
 
 module.exports = {
     getAll,

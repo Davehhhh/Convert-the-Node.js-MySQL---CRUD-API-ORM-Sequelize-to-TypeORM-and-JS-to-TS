@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-const db = require('_helper/db');
+const db = require('../_helpers/db');
 
 module.exports = {
     getAll,
@@ -13,7 +13,7 @@ async function getAll() {
     return await db.User.findAll()
 }
 
-async function geyById(id) {
+async function getById(id) {
     return await getUser(id);
 }
 
